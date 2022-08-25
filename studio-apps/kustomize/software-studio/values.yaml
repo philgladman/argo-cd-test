@@ -1,0 +1,10 @@
+# Default values for app of apps Helm Chart
+
+dsop:
+  name: local-dsop
+  enabled: true
+  application:
+    name: local-dsop
+    sourcePath: studio-apps/kustomize/dsop
+    sourceRev: local
+    projectName: dsop
