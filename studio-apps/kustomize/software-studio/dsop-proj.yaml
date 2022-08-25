@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: dsop
+  namespace: default
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec: 
+  description: TheBAH Software Studio DSOP APP of APPs PRoject
+
+  sourceRepos:
+  - '*'
+
+  destinations:
+  - namespace: '*'
+    server: '*'
+
+  clusterResourceWhiteList:
+  - group: '*'
+    kind: '*'
