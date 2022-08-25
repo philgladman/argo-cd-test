@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: myapp-argo-application
+  namespace: argocd # namespace for this argocd Application
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
+spec:
+  destination: 
+    server: https://kubernetes.default.svc
+    namespace: myapp # name space to deploy the deployment and service in
+
+  project: default
+
+  source:
+    repoURL: https://github.com/philgladman/argo-cd-test.git # git repo to sync with
+    targetRevision: local # git branch, or in this case "HEAD"
+    path: dev # folder in git repo
+    
+  syncPolicy:
+    automated: # pull from git every 3 minutes
+      prune: true # if deleted the service, also want argocd to delete it as well
+      selfHeal: true # basically corrects anything that argocd didnt do, like someone manully creating via kubectl.
+    syncOptions:
+    - CreateNamespace=true # Create the namespace "dev" if it is not already created
