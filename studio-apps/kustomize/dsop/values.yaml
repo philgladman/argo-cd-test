@@ -1,0 +1,10 @@
+# Default values for app of apps Helm Chart
+
+sdp:
+  name: sdp
+  enabled: false
+  application:
+    name: sdp
+    sourcePath: studio-apps/kustomize/sdp
+    sourceRev: local
+    projectName: sdp

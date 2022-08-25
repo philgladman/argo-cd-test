@@ -2,7 +2,9 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: app-of-apps
-  namespace: argocd # namespace for this argocd Application
+  namespace: default # namespace for this argocd Application
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
   annotations:
     argocd.argoproj.io/sync-wave: "1"
 spec:
@@ -15,7 +17,9 @@ spec:
   source:
     repoURL: https://github.com/philgladman/argo-cd-test.git # git repo to sync with
     targetRevision: local # git branch, or in this case "HEAD"
-    path: app-of-apps # folder in git repo
+    path: studio-apps/kustomize/software-studio # folder in git repo
+    plugin:
+      name: kustomized-helm
     
   syncPolicy:
     automated: # pull from git every 3 minutes

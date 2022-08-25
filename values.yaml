@@ -1,0 +1,17 @@
+nginx:
+  name: local-nginx
+  enabled: false
+  application:
+    name: local-nginx
+    sourcePath: studio-apps/kustomize
+    sourceRev: local
+    projectName: nginx
+
+test:
+  name: local-test
+  enabled: false
+  application:
+    name: local-test
+    sourcePath:
+    sourceRev: local
+    projectName: test

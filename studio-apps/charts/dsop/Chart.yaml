@@ -1,0 +1,8 @@
+apiVersioin: v2
+
+appVersion: "0.1.0"
+description: Software DevSecOps Platform (DSOP) Tools Chart
+
+type: application
+name: dsop
+version: 0.1.0

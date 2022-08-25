@@ -1,0 +1,30 @@
+{{- if .Values.nginx.enabled -}}
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: {{ .Values.nginx.application.name }}
+  namespace: default # namespace for this argocd Application
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+  annotations:
+    argocd.argoproj.io/sync-wave: "4"
+spec:
+  destination: 
+    server: https://kubernetes.default.svc
+    namespace: sdp # name space to deploy the deployment and service in
+
+  project: {{ .Values.nginx.application.projectName }}
+
+  source:
+    repoURL: https://github.com/philgladman/argo-cd-test.git # git repo to sync with
+    targetRevision: {{ .Values.nginx.application.sourceRev }} # git branch, or in this case "HEAD"
+    path: {{ .Values.nginx.application.sourcePath }} # folder in git repo
+    plugin:
+      name: kustomized-helm
+    
+  syncPolicy:
+    automated: # pull from git every 3 minutes
+      prune: true # if deleted the service, also want argocd to delete it as well
+      selfHeal: true # basically corrects anything that argocd didnt do, like someone manully creating via kubectl.
+    syncOptions:
+    - CreateNamespace=true # Create the namespace "dev" if it is not already created

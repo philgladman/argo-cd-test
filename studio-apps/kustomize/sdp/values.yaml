@@ -1,0 +1,10 @@
+# Default values for app of apps Helm Chart
+# settings for the nginx app and chart
+nginx:
+  name: local-nginx
+  enabled: false
+  application:
+    name: local-nginx
+    sourcePath: studio-charts/kustomize/nginx
+    sourceRev: local
+    projectName: sdp
