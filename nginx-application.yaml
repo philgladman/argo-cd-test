@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata: 
+  name: nginx-app
+  namespace: argocd
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default 
+
+  project: default
+
+  source:
+    repoURL: https://github.com/philgladman/argo-cd-test.git # git repo to sync with
+    targetRevision: HEAD # git branch, or in this case "HEAD"
+    path: nginx # folder in git repo
+
+  syncPolicy:
+    automated: # pull from git every 3 minutes
+      prune: true # if deleted the service, also want argocd to delete it as well
+      selfHeal: true # basically corrects anything that argocd didnt do, like someone manully creating via kubectl.
+    syncOptions:
+    - CreateNamespace=true
