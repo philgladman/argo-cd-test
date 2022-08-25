@@ -12,7 +12,7 @@ spec:
 
   source:
     repoURL: https://github.com/philgladman/argo-cd-test.git # git repo to sync with
-    targetRevision: HEAD # git branch, or in this case "HEAD"
+    targetRevision: local # git branch, or in this case "HEAD"
     path: nginx # folder in git repo
 
   syncPolicy:

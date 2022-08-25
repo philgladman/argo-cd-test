@@ -6,13 +6,13 @@ metadata:
 spec:
   destination: 
     server: https://kubernetes.default.svc
-    namespace: myapp # name space to deploy this stuff in
+    namespace: myapp # name space to deploy the deployment and service in
 
   project: default
 
   source:
     repoURL: https://github.com/philgladman/argo-cd-test.git # git repo to sync with
-    targetRevision: HEAD # git branch, or in this case "HEAD"
+    targetRevision: local # git branch, or in this case "HEAD"
     path: dev # folder in git repo
     
   syncPolicy:
