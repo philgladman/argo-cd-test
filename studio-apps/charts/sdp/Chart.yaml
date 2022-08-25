@@ -1,8 +1,8 @@
 apiVersioin: v2
 
 appVersion: "0.1.0"
-description: Software DevSecOps Platform (DSOP) Tools Chart
+description: Studio SDP App of Apps Chart
 
 type: application
-name: dsop
+name: sdp-apps
 version: 0.1.0

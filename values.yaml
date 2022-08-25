@@ -1,3 +1,5 @@
+# Default values for app of apps Helm Chart
+
 nginx:
   name: local-nginx
   enabled: false
