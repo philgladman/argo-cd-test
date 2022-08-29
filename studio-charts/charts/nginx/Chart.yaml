@@ -6,4 +6,4 @@ description: NGINX Open Source is a web server that can be also used as a revers
 dependencies:
   - name: "nginx"
     repository: https://charts.bitnami.com/bitnami
-    version: 2.x.x
+    version: 13.2.1

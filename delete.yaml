@@ -1,0 +1,22 @@
+  config:
+    ## Argo CD external base URL. Required when configuring SSO. Required when enabling dex.
+    ## E.g:
+    ## url: https://argocd.example.com
+    ##
+    url: "{{ .Values.server.url }}"
+    ## Argo CD instance label key
+    ##
+    application.instanceLabelKey: argocd.argoproj.io/instance
+    ## If Dex is enabled you need to add connectors here
+    ## dex.config: |
+    ##  connectors: []
+    ##
+    configManagementPlugins: |
+      - name: kustomized-helm
+        generate:
+          command: ["/bin/sh", "-c"]
+          args: ["CHART_NAME=$(basename $(pwd)) && helm template --release-name $ARGOCD_APP_NAME ../../charts/$CHART_NAME -f values.yaml --include-crds --debug > release.yaml && kustomize build"]
+    dex.config: ""
+    repositories: |
+      - url: https://github.com/philgladman/argo-cd-test.git
+    timeout.reconciliation: 30s

@@ -9195,7 +9195,7 @@ metadata:
     app.kubernetes.io/managed-by: Helm
 type: Opaque
 data:
-  redis-password: "cDA0UksyRGxsbg=="
+  redis-password: "WUpNcURES0k1cQ=="
 ---
 # Source: kustomized-argocd/charts/argo-cd/templates/argocd-secret.yaml
 apiVersion: v1
@@ -9215,10 +9215,10 @@ metadata:
     app.kubernetes.io/part-of: argocd
 type: Opaque
 data:
-  clearPassword: "bHBjdVJxdEdwRA=="
+  clearPassword: "d01YTmJ2bG94Vw=="
   # The password needs to be bcrypt hashed
-  admin.password: JDJhJDEwJFZWN0Fhb3ZGQlJKM0xTaVVNYjdJWE9CcDR4MnlYeWtuYm1PZzdmZUpIaEhOemhwbTd1Zm1P
-  admin.passwordMtime: MjAyMi0wOC0yOVQxNzoxMjoyM1o=
+  admin.password: JDJhJDEwJFVGRWZhejByd2E0NFhFcGgvVzQuRk9TYXNGeUlXQnB2OFNGVFBPa09vc1Q4cjV1VHVkV0lp
+  admin.passwordMtime: MjAyMi0wOC0yOVQxODozNzo0Nlo=
 ---
 # Source: kustomized-argocd/charts/argo-cd/charts/redis/templates/configmap.yaml
 apiVersion: v1
@@ -10386,7 +10386,7 @@ spec:
         checksum/configmap: 30ef48b17b721c5f0406aadf0477ff0f6a53205b9360cabe941213f83917404f
         checksum/health: 1d5fcb6c8bfaf5e3af3a4a0605bd907423c8b3260e501c4b776462c6c7ff3b5f
         checksum/scripts: 616c802507bf93acca37f3b7fe80a876e79a19a4b6dbd67045d467fd6d5e33c0
-        checksum/secret: 0d1c7aec57a2071bb47599ee93375cf249caa5a9b5be321315520cdc345ea280
+        checksum/secret: a5566e16bdcdec37960964c1f1bae4fb5b5e5c25cfd4f92a148bf8b62b3cf8d5
     spec:
       
       securityContext:
