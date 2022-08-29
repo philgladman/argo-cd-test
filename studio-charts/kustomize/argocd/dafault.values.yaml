@@ -671,7 +671,7 @@ server:
   ## @param server.configEnabled Enable Argo CD server config
   ## Ref: https://github.com/argoproj/argo-cd/blob/master/docs/operator-manual/argocd-cm.yaml
   ##
-  configEnabled: false
+  configEnabled: true
 
   ## Argo CD server URL
   ## @param server.url Argo CD server base URL. Required when configuring SSO. Required when enabling dex.
