@@ -6,4 +6,4 @@ description: Studio ArgoCD Chart
 dependencies:
   - name: "argo-cd"
     repository: "https://charts.bitnami.com/bitnami"
-    version: "4.0.2""
+    version: "4.0.2"
