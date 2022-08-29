@@ -5,7 +5,7 @@ echo $WORKING_DIR
 cd $WORKING_DIR/studio-charts/kustomize/argocd
 CHART_NAME=$(basename $(pwd))
 RELEASE_NAME=$CHART_NAME
-helm template --release-name $RELEASE_NAME ../../charts/$CHART_NAME -f values.yaml --inlude-crds --debug > release.yaml
+helm template --release-name $RELEASE_NAME ../../charts/$CHART_NAME -f values.yaml --include-crds --debug > release.yaml
 kubectl apply -k .
 
 # deploy app of apps

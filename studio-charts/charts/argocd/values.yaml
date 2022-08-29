@@ -733,7 +733,7 @@ server:
       - name: kustomized-helm
         generate:
           command: ["/bin/sh", "-c"]
-          args: ["CHART_NAME=$(basename $(pwd)) && helm template --release-name $ARGOCD_APP_NAME ../../charts/$CHART_NAME -f values.yaml --inlude-crds --debug > release.yaml && kustomize build"]
+          args: ["CHART_NAME=$(basename $(pwd)) && helm template --release-name $ARGOCD_APP_NAME ../../charts/$CHART_NAME -f values.yaml --include-crds --debug > release.yaml && kustomize build"]
     dex.config: ""
     repositories: |
       - url: https://github.com/philgladman/argo-cd-test.git
