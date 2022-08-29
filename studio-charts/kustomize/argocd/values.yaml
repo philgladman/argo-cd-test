@@ -658,7 +658,7 @@ server:
   ## Redirect all request to https
   ## @param server.insecure Disable HTTPS redirection for Argo CD server
   ##
-  insecure: false
+  insecure: true
 
   ## @param server.logFormat ArgoCD server logs format. Options: [text, json]
   ##
@@ -671,12 +671,12 @@ server:
   ## @param server.configEnabled Enable Argo CD server config
   ## Ref: https://github.com/argoproj/argo-cd/blob/master/docs/operator-manual/argocd-cm.yaml
   ##
-  configEnabled: false
+  configEnabled: true
 
   ## Argo CD server URL
   ## @param server.url Argo CD server base URL. Required when configuring SSO. Required when enabling dex.
   ##
-  url: ""
+  url: "https://argocd.cluster.local"
 
   ## Argo CD server config. This object will be directly rendered
   ## @param server.config [object] Argo CD server configuration that will end on the argocd-cm Config Map
@@ -730,6 +730,7 @@ server:
     ##  connectors: []
     ##
     dex.config: ""
+    timeout.reconciliation: 30s
 
   ## Configure the ingress for the Argo CD server
   ## Ref: https://kubernetes.io/docs/user-guide/ingress/
