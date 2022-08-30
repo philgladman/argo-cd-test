@@ -1,0 +1,10 @@
+apiVersion: v2
+name: kustomized-nginx
+version: 0.1.0
+appVersion: 0.1.1
+kubeVersion: ">= 1.16.0-0"
+description: NGINX Open Source is a web server that can be also used as a reverse proxy, load balancer, and HTTP cache. Recommended for high-demanding sites due to its ability to provide faster content.
+dependencies:
+  - name: "nginx"
+    repository: https://charts.bitnami.com/bitnami
+    version: "13.2.1"

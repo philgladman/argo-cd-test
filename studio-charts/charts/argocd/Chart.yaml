@@ -1,0 +1,10 @@
+apiVersion: v2
+name: kustomized-argocd
+version: 0.1.0
+appVersion: 0.1.1
+kubeVersion: ">= 1.16.0-0"
+description: Studio ArgoCD Chart
+dependencies:
+  - name: "argo-cd"
+    repository: "https://charts.bitnami.com/bitnami"
+    version: "4.0.2"

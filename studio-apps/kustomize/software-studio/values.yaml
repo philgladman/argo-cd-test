@@ -1,0 +1,8 @@
+apiVersioin: v2
+
+appVersion: "0.1.0"
+description: Software Studio App of Apps Chart
+
+type: application
+name: software-studio
+version: 0.1.0
