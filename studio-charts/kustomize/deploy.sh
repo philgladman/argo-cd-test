@@ -1,3 +1,5 @@
+set-local
+
 WORKING_DIR=$(pwd)
 echo $WORKING_DIR
 

@@ -2,7 +2,7 @@
 
 sdp:
   name: sdp
-  enabled: false
+  enabled: true
   application:
     name: sdp
     sourcePath: studio-apps/kustomize/sdp
