@@ -10,7 +10,7 @@ metadata:
 spec:
   destination: 
     server: https://kubernetes.default.svc
-    namespace: default # name space to deploy the deployment and service in
+    namespace: app-of-apps # name space to deploy the deployment and service in
 
   project: default
 
