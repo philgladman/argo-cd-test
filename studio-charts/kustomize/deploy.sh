@@ -3,6 +3,11 @@ set-local
 WORKING_DIR=$(pwd)
 echo $WORKING_DIR
 
+
+echo $GH_CSN_PAT > ./pat.txt
+sleep 2
+kubectl create secret generic argocd-csn-repo-secret --from-file ./pat.txt
+
 # deploy argocd
 cd $WORKING_DIR/studio-charts/kustomize/argocd
 CHART_NAME=$(basename $(pwd))

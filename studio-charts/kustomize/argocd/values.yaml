@@ -737,6 +737,9 @@ argo-cd:
             args: ["CHART_NAME=$(basename $(pwd)) && helm template --release-name $ARGOCD_APP_NAME ../../charts/$CHART_NAME -f values.yaml --include-crds --debug > release.yaml && kustomize build"]
       repositories: |
         - url: https://github.com/philgladman/argo-cd-test.git
+          passwordSecret:
+            name: argocd-csn-repo-secret
+            key: pat.txt
       dex.config: ""
 
     ## Configure the ingress for the Argo CD server
