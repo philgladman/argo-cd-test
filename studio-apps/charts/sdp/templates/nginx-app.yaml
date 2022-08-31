@@ -28,3 +28,4 @@ spec:
       selfHeal: true # basically corrects anything that argocd didnt do, like someone manully creating via kubectl.
     syncOptions:
     - CreateNamespace=true # Create the namespace "dev" if it is not already created
+{{- end }}
